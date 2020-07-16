@@ -92,5 +92,173 @@ namespace MVC5_Online_shop.Areas.Admin
             //Redirect user to INDEX method
             return RedirectToAction("Index");
         }
+
+        // GET: Admin/Pages/EditPafe/id
+        [HttpGet]
+        public ActionResult EditPage(int id)
+        {
+            //declaration of model PageVM
+            PageVM model;
+
+            using(Db db = new Db())
+            {
+                //Getting page by id
+                PagesDTO dto = db.Pages.Find(id);
+
+                //Checkig if the page is available
+                if(dto == null)
+                {
+                    return Content("The page doesn't exist.");
+                }
+
+                //Initialize model with data
+                model = new PageVM(dto);
+            }
+
+
+            //Return model to view
+            return View(model);
+        }
+
+        // POST: Admin/Pages/EditPage/model
+        [HttpPost]
+        public ActionResult EditPage(PageVM model)
+        {
+            //validation model check
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            using(Db db = new Db())
+            {
+                //getting ID of page
+                int id = model.Id;
+
+                //declare variable for slug
+                string slug = "home";
+
+                //getting page by id
+                PagesDTO dto = db.Pages.Find(id);
+
+                //assign name from received model DTO
+                dto.Title = model.Title.ToUpper();
+
+                //checking if the slug exist and assign him if it's nessesary
+                if(model.Slug != "home")
+                {
+                    if (string.IsNullOrWhiteSpace(model.Slug))
+                    {
+                        slug = model.Title.Replace(" ", "-").ToLower();
+                    }
+                    else
+                    {
+                        slug = model.Slug.Replace(" ", "-").ToLower();
+                    }
+                }
+
+                //checking slug and title for unique
+                if(db.Pages.Where(x => x.Id != id).Any(x => x.Title == model.Title))
+                {
+                    ModelState.AddModelError("", "That title is already exist");
+                    return View(model);
+                }
+                else if(db.Pages.Where(x => x.Id != id).Any(x => x.Slug == slug))
+                    {
+                    ModelState.AddModelError("", "That slug is already exist");
+                    return View(model);
+                    }
+
+                //assing other value from DTO
+                dto.Slug = slug;
+                dto.Body = model.Body;
+                dto.HasSidebar = model.HasSidebar;
+
+                //saving to Db
+                db.SaveChanges();
+            }
+
+
+            //set up message in TempData
+            TempData["SM"] = "You have edited the page.";
+
+            //redirect user to 
+            return RedirectToAction("EditPage");
+        }
+
+        //GET: Admin/Pages/PageDetails/id
+        [HttpGet]
+        public ActionResult PageDetails(int id)
+        {
+            //Declare model PageVM
+            PageVM model;
+
+            using(Db db = new Db())
+            {
+                //Getting page 
+                PagesDTO dto = db.Pages.Find(id);
+
+                //Checkint if page is available
+                if(dto == null)
+                {
+                    return Content("The page doesn't exist");
+                }
+                //Assing fields from db to dto model
+                model = new PageVM(dto);
+            }
+
+            //return model to view
+            return View(model);
+        }
+
+        //GET: Admin/Pages/DeletePage/id
+        [HttpGet]
+        public ActionResult DeletePage(int id)
+        {
+            using (Db db = new Db())
+            {
+                //Getting page
+                PagesDTO dto = db.Pages.Find(id);
+
+                //Deleting page
+                db.Pages.Remove(dto);
+
+                //Saving changes to db
+                db.SaveChanges();
+            }
+
+            //Send message about succesfull deleting
+            TempData["SM"] = "You have delete page succesfully!";
+
+
+            //Redirect user
+            return RedirectToAction("Index");
+        }
+
+        //GET: Admin/Pages/ReorderPages
+        [HttpPost]
+        public void ReorderPages(int[] id)
+        {
+            using (Db db = new Db())
+            {
+                //Realization of counter
+                int count = 1;
+
+                //Initialize data model
+                PagesDTO dto;
+
+                //Setup sorting for each page
+                foreach(var pageId in id)
+                {
+                    dto = db.Pages.Find(pageId);
+                    dto.Sorting = count;
+
+                    db.SaveChanges();
+
+                    count++;
+                }
+            }
+
+        }
     }
 }
