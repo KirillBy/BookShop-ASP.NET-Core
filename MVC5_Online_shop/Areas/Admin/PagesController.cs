@@ -260,5 +260,50 @@ namespace MVC5_Online_shop.Areas.Admin
             }
 
         }
+
+        //GET: Admin/Pages/EditSidebar
+        [HttpGet]
+        public ActionResult EditSidebar()
+        {
+            //Declare model
+            SidebarVM model;
+
+            using(Db db = new Db())
+            {
+                //Getting data from DTO
+                SidebarDTO dto = db.Sidebars.Find(1);//Replace later!!
+
+
+                //Fill up the model
+                model = new SidebarVM(dto);
+
+            }
+
+            //Return view with model
+            return View(model);
+        }
+
+        //POST: Admin/Pages/EditSidebar
+        [HttpPost]
+        public ActionResult EditSidebar(SidebarVM model)
+        {
+            using(Db db = new Db())
+            {
+                //Get data from dto
+                SidebarDTO dto = db.Sidebars.Find(1); // Change after test!!!!
+
+                //Assign data to body(to properties Body)
+                dto.Body = model.Body;
+
+                //Save 
+                db.SaveChanges();
+            }
+
+            //Send success message to TempData
+            TempData["SM"] = "You have edited sidebar";
+
+            //Redirect user
+            return RedirectToAction("EditSidebar");
+        }
     }
 }
