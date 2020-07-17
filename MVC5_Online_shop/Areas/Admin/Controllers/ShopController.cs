@@ -2,8 +2,10 @@
 using MVC5_Online_shop.Models.ViewModels.Shop;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace MVC5_Online_shop.Areas.Admin.Controllers
@@ -139,7 +141,7 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
             return "ok";
         }
 
-        //GET: Admin/Shop/AddProduct/id
+        //GET: Admin/Shop/AddProduct/
         [HttpGet]
         public ActionResult AddProduct()
         {
@@ -155,6 +157,136 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
             //return model to view
             return View(model);
 
+        }
+
+        //POST: Admin/Shop/AddProduct/
+        [HttpPost]
+        public ActionResult AddProduct(ProductVM model, HttpPostedFileBase file)
+        {
+            //validation check
+            if(!ModelState.IsValid)
+            {
+                using(Db db = new Db())
+                {
+                    model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+                    return View(model);
+                }
+            }
+
+            //unique check
+            using(Db db = new Db())
+            {
+                if(db.Products.Any(x => x.Name == model.Name))
+                {
+                    model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+                    ModelState.AddModelError("", "That product name is taken!");
+                    return View(model);
+                }
+            }
+
+            //declare product id variable
+            int id;
+
+            //initialize and saving model based on productdto
+            using(Db db = new Db())
+            {
+                ProductDTO product = new ProductDTO();
+
+                product.Name = model.Name;
+                product.Slug = model.Name.Replace(" ", "-").ToLower();
+                product.Description = model.Description;
+                product.Price = model.Price;
+                product.CategoryId = model.CategoryId;
+
+                CategoryDTO catDTO = db.Categories.FirstOrDefault(x => x.Id == model.CategoryId);
+                product.CategoryName = catDTO.Name;
+
+                db.Products.Add(product);
+                db.SaveChanges();
+
+                id = product.Id;
+            }
+
+            //add message to tempdata
+            TempData["SM"] = "New product add succesfully";
+
+            #region Upload Image
+
+            //create links on directory
+            var originalDirectory = new DirectoryInfo(string.Format($"{Server.MapPath(@"\")}Images\\Uploads"));
+
+            var pathString1 = Path.Combine(originalDirectory.ToString(), "Products");
+            var pathString2 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString());
+            var pathString3 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString()+ "\\Thumbs");
+            var pathString4 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery");
+            var pathString5 = Path.Combine(originalDirectory.ToString(), "Products\\" + id.ToString() + "\\Gallery\\Thumbs");
+
+            //checking if directory exist(if doesn't exist - create)
+            if (!Directory.Exists(pathString1))
+                Directory.CreateDirectory(pathString1);
+
+            if (!Directory.Exists(pathString2))
+                Directory.CreateDirectory(pathString2);
+
+            if (!Directory.Exists(pathString3))
+                Directory.CreateDirectory(pathString3);
+
+            if (!Directory.Exists(pathString4))
+                Directory.CreateDirectory(pathString4);
+
+            if (!Directory.Exists(pathString5))
+                Directory.CreateDirectory(pathString5);
+
+            //checking if file was uploaded
+            if (file != null && file.ContentLength > 0)
+            {
+                //Get exstension of file
+                string ext = file.ContentType.ToLower();
+
+                //checking extension of file
+                if (ext != "image/jpg" &&
+                    ext != "image/jpeg" &&
+                    ext != "image/pjpeg" &&
+                    ext != "image/gif" &&
+                    ext != "image/x-png" &&
+                    ext != "image/png")
+                {
+                    using (Db db = new Db())
+                    {
+                        model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+                        ModelState.AddModelError("", "The image wasn't uploaded caused by incorrect extension");
+                        return View(model);
+                    }
+                }
+
+
+                //declare variable with image name
+                string imageName = file.FileName;
+
+                //saving image name to model dtp
+                using (Db db = new Db())
+                {
+                    ProductDTO dto = db.Products.Find(id);
+                    dto.ImageName = imageName;
+                    db.SaveChanges();
+                }
+
+                //set routes to original and small image
+                var path = string.Format($"{pathString2}\\{imageName}");
+                var path2 = string.Format($"{pathString3}\\{imageName}");
+
+                //save origin image
+                file.SaveAs(path);
+
+                //create and save small copy
+                WebImage img = new WebImage(file.InputStream);
+                img.Resize(width: 200, height: 200);
+                img.Save(path2);
+            }
+            #endregion
+
+            //redirect to user action
+            return RedirectToAction("AddProduct");
         }
     }
 }

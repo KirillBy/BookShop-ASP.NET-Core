@@ -39,7 +39,6 @@ namespace MVC5_Online_shop.Models.ViewModels.Shop
 
         public decimal Price { get; set; }
 
-        [Required]
         public string CategoryName { get; set; }
 
         [Required]
