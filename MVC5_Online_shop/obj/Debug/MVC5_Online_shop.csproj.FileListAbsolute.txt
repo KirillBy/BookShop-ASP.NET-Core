@@ -80,4 +80,8 @@ C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\EntityFramework.dll
 C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\EntityFramework.SqlServer.dll
 C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\EntityFramework.xml
 C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\EntityFramework.SqlServer.xml
+C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\PagedList.dll
+C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\PagedList.Mvc.dll
+C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\PagedList.xml
+C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\bin\PagedList.Mvc.xml
 C:\ASP.NET practice\MVC5_Online_shop\MVC5_Online_shop\obj\Debug\MVC5_Online_shop.csprojAssemblyReference.cache

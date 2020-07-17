@@ -1,5 +1,6 @@
 ﻿using MVC5_Online_shop.Models.Data;
 using MVC5_Online_shop.Models.ViewModels.Shop;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -287,6 +288,40 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
 
             //redirect to user action
             return RedirectToAction("AddProduct");
+        }
+
+        //Get: Admin/Shop/Product/
+        [HttpGet]
+        public ActionResult Products(int? page, int? catId)
+        {
+            //declare ProductVM List
+            List<ProductVM> listOfProductVM;
+
+            //set number of page
+            var pageNumber = page ?? 1;
+
+            using (Db db = new Db())
+            {
+                //initialize list and fill it with data
+                listOfProductVM = db.Products.ToArray()
+                    .Where(x => catId == null || catId == 0 || x.CategoryId == catId)
+                    .Select(x => new ProductVM(x))
+                    .ToList();
+
+                //fill categories with data
+                ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+
+                //set chosen category
+                ViewBag.SelectedCat = catId.ToString();
+
+            }
+
+            //set paged navigation
+            var onePageOfProducts = listOfProductVM.ToPagedList(pageNumber, 3);
+            ViewBag.onePageOfProducts = onePageOfProducts;
+
+            //return view with data
+            return View(listOfProductVM);
         }
     }
 }
