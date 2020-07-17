@@ -12,5 +12,7 @@ namespace MVC5_Online_shop.Models.Data
 
         public DbSet<SidebarDTO> Sidebars { get; set; }
 
+        public DbSet<CategoryDTO> Categories { get; set; }
+
     }
 }
