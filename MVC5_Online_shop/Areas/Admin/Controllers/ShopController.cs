@@ -30,5 +30,113 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
             //return List to view
             return View(categoryVMList);
         }
+
+        // GET: Admin/Shop/AddNewCategory
+        [HttpPost]
+        public string AddNewCategory(string catName)
+        {
+            //declare string variable ID
+            string id;
+
+            using(Db db = new Db())
+            {
+                //check category for unique
+                if (db.Categories.Any(x => x.Name == catName))
+                    return "titletaken";
+
+                //initialize model DTO
+                CategoryDTO dto = new CategoryDTO();
+
+                //add data to model
+                dto.Name = catName;
+                dto.Slug = catName.Replace(" ", "-").ToLower();
+                dto.Sorting = 100;
+
+                //save
+                db.Categories.Add(dto);
+                db.SaveChanges();
+
+                //get id to return to view
+                id = dto.Id.ToString();
+            }
+
+            //return id to view
+            return id;
+        }
+
+        //POST: Admin/Pages/ReorderCategories
+        [HttpPost]
+        public void ReorderCategories(int[] id)
+        {
+            using (Db db = new Db())
+            {
+                //Realization of counter
+                int count = 1;
+
+                //Initialize data model
+                CategoryDTO dto;
+
+                //Setup sorting for each page
+                foreach (var catit in id)
+                {
+                    dto = db.Categories.Find(catit);
+                    dto.Sorting = count;
+
+                    db.SaveChanges();
+
+                    count++;
+                }
+            }
+
+        }
+
+        //GET: Admin/Pages/DeleteCategory/id
+        [HttpGet]
+        public ActionResult DeleteCategory(int id)
+        {
+            using (Db db = new Db())
+            {
+                //Getting category
+                CategoryDTO dto = db.Categories.Find(id);
+
+                //Deleting category
+                db.Categories.Remove(dto);
+
+                //Saving changes to db
+                db.SaveChanges();
+            }
+
+            //Send message about succesfull deleting
+            TempData["SM"] = "You have delete category succesfully!";
+
+
+            //Redirect user
+            return RedirectToAction("Categories");
+        }
+
+        //Post: Admin/Pages/RenameCategory/id
+        [HttpPost]
+        public string RenameCategory (string newCatName, int id)
+        {
+            using(Db db = new Db())
+            {
+                //checking name for unique
+                if (db.Categories.Any(x => x.Name == newCatName))
+                    return "titletaken";
+
+                //get data from dto
+                CategoryDTO dto = db.Categories.Find(id);
+
+                //edit model dto
+                dto.Name = newCatName;
+                dto.Slug = newCatName.Replace(" ", "-").ToLower();
+
+                //saving changes
+                db.SaveChanges();
+            }
+
+            //return string
+            return "ok";
+        }
     }
 }
