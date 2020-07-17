@@ -64,7 +64,7 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
             return id;
         }
 
-        //POST: Admin/Pages/ReorderCategories
+        //POST: Admin/Shop/ReorderCategories
         [HttpPost]
         public void ReorderCategories(int[] id)
         {
@@ -90,7 +90,7 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
 
         }
 
-        //GET: Admin/Pages/DeleteCategory/id
+        //GET: Admin/Shop/DeleteCategory/id
         [HttpGet]
         public ActionResult DeleteCategory(int id)
         {
@@ -114,7 +114,7 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
             return RedirectToAction("Categories");
         }
 
-        //Post: Admin/Pages/RenameCategory/id
+        //Post: Admin/Shop/RenameCategory/id
         [HttpPost]
         public string RenameCategory (string newCatName, int id)
         {
@@ -137,6 +137,24 @@ namespace MVC5_Online_shop.Areas.Admin.Controllers
 
             //return string
             return "ok";
+        }
+
+        //GET: Admin/Shop/AddProduct/id
+        [HttpGet]
+        public ActionResult AddProduct()
+        {
+            //Declare data model
+            ProductVM model = new ProductVM();
+
+            //add list of categories from db to model
+            using(Db db = new Db())
+            {
+                model.Categories = new SelectList(db.Categories.ToList(), "id", "Name");
+            }
+
+            //return model to view
+            return View(model);
+
         }
     }
 }
