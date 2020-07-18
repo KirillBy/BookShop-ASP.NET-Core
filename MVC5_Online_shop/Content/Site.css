@@ -65,3 +65,13 @@ textarea {
         border-left: 5px solid #737373;
     }
 }
+.ajaxmsg{
+    background: green;
+    color: white;
+    padding: 10px;
+    display: none;
+}
+
+.loader{
+    display: none;
+}
