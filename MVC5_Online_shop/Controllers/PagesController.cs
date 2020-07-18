@@ -72,5 +72,22 @@ namespace MVC5_Online_shop.Controllers
             //return partial view and list with data
             return PartialView("_PagesMenuPartial", pageVMList);
         }
+
+        public ActionResult SidebarPartial()
+        {
+            //declare model
+            SidebarVM model;
+
+            //init model 
+            using(Db db = new Db())
+            {
+                SidebarDTO dto = db.Sidebars.Find(1);
+
+                model = new SidebarVM(dto);
+            }
+
+            //return model to partial view
+            return PartialView("_SidebarPartial", model);
+        }
     }
 }
