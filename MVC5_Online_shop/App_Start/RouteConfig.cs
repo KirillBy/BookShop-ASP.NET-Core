@@ -13,6 +13,10 @@ namespace MVC5_Online_shop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute("Cart", "Cart/{action}/{id}", new { controller = "Cart", action = "Index", id = UrlParameter.Optional },
+                 new[] { "MVC5_Online_shop.Controllers" });
+
             routes.MapRoute("SidebarPartial", "Pages/SidebarPartial", new { controller = "Pages", action = "SidebarPartial" },
                  new[] { "MVC5_Online_shop.Controllers" });
 
