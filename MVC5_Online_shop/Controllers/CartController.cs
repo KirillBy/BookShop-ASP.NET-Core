@@ -1,4 +1,5 @@
-﻿using MVC5_Online_shop.Models.ViewModels.Cart;
+﻿using MVC5_Online_shop.Models.Data;
+using MVC5_Online_shop.Models.ViewModels.Cart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,10 @@ namespace MVC5_Online_shop.Controllers
                     qty += item.Quantity;
                     price += item.Quantity * item.Price;
                 }
+
+
+                model.Quantity = qty;
+                model.Price = price;
             }
             else
             {
@@ -68,6 +73,88 @@ namespace MVC5_Online_shop.Controllers
 
             //return partial view
             return PartialView("_CartPartial",model);
+        }
+
+        public ActionResult AddToCartPartial(int id)
+        {
+            //declare List<CartVM>
+            List<CartVM> cart = Session["cart"] as List<CartVM> ?? new List<CartVM>();
+
+            //declare model CartVM
+            CartVM model = new CartVM();
+
+            using (Db db = new Db())
+
+            {
+                //get product
+                ProductDTO product = db.Products.Find(id);
+
+                //check if product is already in cart
+                var productInCart = cart.FirstOrDefault(x => x.ProductId == id);
+
+                //if no, than add 
+                if(productInCart == null)
+                {
+                    cart.Add(new CartVM()
+                    {
+                        ProductId = product.Id,
+                        ProductName = product.Name,
+                        Quantity = 1,
+                        Price = product.Price,
+                        Image = product.ImageName
+                    });
+                }
+
+                //if yes, add one more
+                else
+                {
+                    productInCart.Quantity++;
+                }
+
+            }
+
+            //get total number of products, price and add data to model
+            int qty = 0;
+            decimal price = 0m;
+
+            foreach(var item in cart)
+            {
+                qty += item.Quantity;
+                price += item.Quantity * item.Price;
+            }
+
+            model.Quantity = qty;
+            model.Price = price;
+
+            //save cart to session
+            Session["cart"] = cart;
+
+            //return partial view with model
+            return PartialView("_AddToCartPartial", model);
+
+        }
+
+        //GET:/cart/IncrementProduct
+        public JsonResult IncrementProduct(int productId)
+        {
+            // declare List<CartVM>
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+
+            using(Db db = new Db())
+            {
+                //get CartVM from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                //add quantity
+                model.Quantity++;
+
+                //save data
+                var result = new { qty = model.Quantity, price = model.Price };
+
+                //return json with data
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+
         }
     }
 }

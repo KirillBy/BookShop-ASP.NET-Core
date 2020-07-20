@@ -75,3 +75,7 @@ textarea {
 .loader{
     display: none;
 }
+
+.ib {
+    display: inline-block !important;
+}
