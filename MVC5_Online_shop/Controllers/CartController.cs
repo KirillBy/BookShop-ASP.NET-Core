@@ -156,5 +156,48 @@ namespace MVC5_Online_shop.Controllers
             }
 
         }
+
+        //GET:/cart/DecrementProduct
+        public ActionResult DecrementProduct(int productId)
+        {
+            // declare List<CartVM>
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+
+            using (Db db = new Db())
+            {
+                //get CartVM from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                //remove quantity
+                if (model.Quantity > 1)
+                    model.Quantity--;
+                else
+                {
+                    model.Quantity = 0;
+                    cart.Remove(model);
+                }
+
+                //save data
+                var result = new { qty = model.Quantity, price = model.Price };
+
+                //return json with data
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        //GET:/cart/RemoveProduct
+        public void RemoveProduct(int productId)
+        {
+            // declare List<CartVM>
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+
+            using (Db db = new Db())
+            {
+                //get CartVM from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                cart.Remove(model);
+            }
+        }
     }
 }
