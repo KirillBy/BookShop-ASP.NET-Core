@@ -1,4 +1,6 @@
-﻿using MVC5_Online_shop.Models.Data;
+﻿using Logic;
+using MVC5_Online_shop.Models.Data;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,12 @@ namespace MVC5_Online_shop
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //dependency injection
+
+            var kernel = new StandardKernel(new NinjectSettings { LoadExtensions = true });
+
+            kernel.Load(new LogicDIModule());
         }
 
         protected void Application_AuthentificateRequest()
