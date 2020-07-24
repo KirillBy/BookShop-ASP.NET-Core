@@ -1,4 +1,5 @@
-﻿using MVC5_Online_shop.Models.Data;
+﻿using Logic.Services;
+using MVC5_Online_shop.Models.Data;
 using MVC5_Online_shop.Models.ViewModels.Cart;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,12 @@ namespace MVC5_Online_shop.Controllers
 {
     public class CartController : Controller
     {
+        private readonly ICartService cartservice;
+
+        public CartController(ICartService cartservice)
+        {
+            this.cartservice = cartservice;
+        }
         // GET: Cart
         public ActionResult Index()
         {

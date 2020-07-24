@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.Services
 {
-    class ClassService
+    class IShopService
     {
-
     }
 }
