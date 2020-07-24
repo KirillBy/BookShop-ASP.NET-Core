@@ -429,3 +429,5 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcor
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Home\Privacy.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\_ViewImports.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\_ViewStart.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
