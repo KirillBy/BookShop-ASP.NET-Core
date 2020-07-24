@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.Services
 {
-    public class CartService
+    public class CartService:ICartService
     {
 
     }

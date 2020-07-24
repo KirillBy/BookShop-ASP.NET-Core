@@ -54,6 +54,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Context\OnlineShopContext.cs" />
     <Compile Include="Models\CategoryDTO.cs" />
+    <Compile Include="Models\Db.cs" />
     <Compile Include="Models\PagesDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\RoleDTO.cs" />

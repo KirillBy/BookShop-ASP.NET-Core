@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.Services
 {
-    class AccountService
+    class AccountService:IAccountService
     {
     }
 }

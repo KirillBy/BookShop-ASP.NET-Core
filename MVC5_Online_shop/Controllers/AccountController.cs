@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
+
 namespace MVC5_Online_shop.Controllers
 {
     public class AccountController : Controller
@@ -22,6 +23,7 @@ namespace MVC5_Online_shop.Controllers
         [HttpGet]
         public ActionResult CreateAccount()
         {
+
             return View("CreateAccount");
         }
 
@@ -29,11 +31,12 @@ namespace MVC5_Online_shop.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+           
             //confirm if user is authorized
             string userName = User.Identity.Name;
             if (!string.IsNullOrEmpty(userName))
                 return RedirectToAction("user-profile");
-
+          
             //return view()
             return View();
         }
@@ -46,7 +49,7 @@ namespace MVC5_Online_shop.Controllers
             //check model for validy
             if (!ModelState.IsValid)
                 return View("CreateAccount", model);
-
+            CreateAccount();
             //check pass
             if (!model.Password.Equals(model.ConfirmPassword))
             {
@@ -54,44 +57,7 @@ namespace MVC5_Online_shop.Controllers
                 return View("CreateAccount", model);
             }
 
-            using (Db db = new Db())
-            {
-                //check name for unique
-                if (db.Users.Any(x => x.UserName.Equals(model.UserName)))
-                {
-                    ModelState.AddModelError("", $"Username {model.UserName} is taken.");
-                    model.UserName = "";
-                    return View("CreateAccount", model);
-                }
 
-                //create usertDTO
-                UserDTO userDTO = new UserDTO()
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    EmailAdress = model.EmailAdress,
-                    UserName = model.UserName,
-                    Password = model.Password
-                };
-
-                //add data to userDTO model
-                db.Users.Add(userDTO);
-
-                //save data
-                db.SaveChanges();
-
-                //add role
-                int id = userDTO.Id;
-
-                UserRoleDTO userRoleDTO = new UserRoleDTO()
-                {
-                    UserId = id,
-                    RoleId = 2
-                };
-
-                db.UserRoles.Add(userRoleDTO);
-                db.SaveChanges();
-            }
 
             //write msg to tempdata
             TempData["SM"] = "Your are now registered and can login";
