@@ -6,3 +6,4 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Models\obj\Debug
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Models\obj\Debug\netcoreapp3.1\BookShop.Models.AssemblyInfo.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Models\obj\Debug\netcoreapp3.1\BookShop.Models.dll
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Models\obj\Debug\netcoreapp3.1\BookShop.Models.pdb
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Models\obj\Debug\netcoreapp3.1\BookShop.Models.csprojAssemblyReference.cache
