@@ -1,9 +1,10 @@
-﻿using BookStore.Models;
+﻿using BookShop.DataAccess.Repository.IRepository;
+using BookShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookStore.DataAccess.Repository.IRepository
+namespace BookShop.DataAccess.Repository.IRepository
 {
     public interface ICategoryRepository : IRepository<Category>
     {
