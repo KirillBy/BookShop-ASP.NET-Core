@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using BookShop.Models;
+
+using BookShop.Models.ViewModels;
 
 namespace BookShop.Controllers
 {

@@ -1,0 +1,9 @@
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\Debug\netcoreapp3.1\BookShop.DataAccess.deps.json
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\Debug\netcoreapp3.1\BookShop.DataAccess.dll
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.AssemblyInfoInputs.cache
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.AssemblyInfo.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\Debug\netcoreapp3.1\BookShop.DataAccess.pdb
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.csproj.CoreCompileInputs.cache
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.dll
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.pdb
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.csprojAssemblyReference.cache
