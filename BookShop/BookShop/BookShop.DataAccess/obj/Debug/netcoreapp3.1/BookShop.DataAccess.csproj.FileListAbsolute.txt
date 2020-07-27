@@ -11,3 +11,4 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\D
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\Debug\netcoreapp3.1\BookShop.Models.pdb
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\bin\Debug\netcoreapp3.1\BookShop.Utility.pdb
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.csproj.CopyComplete
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.DataAccess\obj\Debug\netcoreapp3.1\BookShop.DataAccess.csproj.CoreCompileInputs.cache
