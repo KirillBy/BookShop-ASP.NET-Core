@@ -452,3 +452,6 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcor
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cache
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Upsert.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CreateAndBackToListButton.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs
