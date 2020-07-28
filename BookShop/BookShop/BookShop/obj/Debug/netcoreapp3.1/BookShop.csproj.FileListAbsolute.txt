@@ -502,3 +502,4 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcor
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
