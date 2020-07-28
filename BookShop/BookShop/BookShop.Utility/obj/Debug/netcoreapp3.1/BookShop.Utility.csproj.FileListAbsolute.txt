@@ -1,9 +1,9 @@
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\bin\Debug\netcoreapp3.1\BookShop.Utility.deps.json
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\bin\Debug\netcoreapp3.1\BookShop.Utility.dll
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\bin\Debug\netcoreapp3.1\BookShop.Utility.pdb
-C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.csproj.CoreCompileInputs.cache
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.AssemblyInfoInputs.cache
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.AssemblyInfo.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.dll
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.pdb
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.csprojAssemblyReference.cache
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop.Utility\obj\Debug\netcoreapp3.1\BookShop.Utility.csproj.CoreCompileInputs.cache

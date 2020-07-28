@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using BookShop.DataAccess.Data;
 using BookShop.DataAccess.Repository.IRepository;
 using BookShop.DataAccess.Repository;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using BookShop.Utility;
 
 namespace BookShop
 {
@@ -32,8 +34,9 @@ namespace BookShop
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddSingleton<IEmailSender, EmailSender>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
