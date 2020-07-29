@@ -42,7 +42,7 @@ namespace BookShop
             services.AddRazorPages();
             services.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = $"/Identity/Account/Login";
+                options.LoginPath = $"/Identity/Account/Login"; 
                 options.LogoutPath = $"/Identity/Account/Logout";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
@@ -55,6 +55,12 @@ namespace BookShop
             {
                 options.ClientId = "800568240173-hd1uhvfe2aceu0cugmivgcohvb5sgkks.apps.googleusercontent.com";
                 options.ClientSecret = "pBvHXwGqutlXNMgVYRKGuJg2";
+            });
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
         }
 
@@ -76,6 +82,7 @@ namespace BookShop
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();

@@ -505,3 +505,4 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcor
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.csproj.CoreCompileInputs.cache
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cache
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Home\Details.cshtml.g.cs
