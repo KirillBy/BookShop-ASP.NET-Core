@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LjaOwwMDYdNt4n2v+ntkW5Pta2HqJmx1z3XCes22RmHi9lr/B7VGswbRJ+00T4VxLn0xgMjZ9ThSEPBS5dn5Ew==",
+  "dgSpecHash": "57vJ0046VDbkuHyOGm+sde45Hqe5rKV7W1+h21VVtBf97Cx9gsuwzDv0Kys3xkqDxfDStbrN43aggQTxgaadKA==",
   "success": true,
   "projectFilePath": "C:\\ASP.NET practice\\MVC5_Online_shop\\BookShop\\BookShop\\BookShop.Utility\\BookShop.Utility.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,9 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.6\\microsoft.extensions.logging.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.options\\3.1.6\\microsoft.extensions.options.3.1.6.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6\\microsoft.extensions.primitives.3.1.6.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\sendgrid\\9.19.0\\sendgrid.9.19.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512"
   ],
   "logs": []
 }

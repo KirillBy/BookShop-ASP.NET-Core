@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EkJdKmHc7NoFym0gKKyhl8bsLtbQueLLooGSqJtRXj8ezqGfV1T7JVtiOGfqsu2gnuDC+solXekHr/1IBrTyWQ==",
+  "dgSpecHash": "FU+YZq+McMr3AvKApkAqurtOpkDCXNWX4L1bLWq1H0E4eWxaWd7zcnw2tGvW+ejaOEBwuwFO9PnMLTseGePOhA==",
   "success": true,
   "projectFilePath": "C:\\ASP.NET practice\\MVC5_Online_shop\\BookShop\\BookShop\\BookShop.DataAccess\\BookShop.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -94,6 +94,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\sendgrid\\9.19.0\\sendgrid.9.19.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
