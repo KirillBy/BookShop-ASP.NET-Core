@@ -1,5 +1,6 @@
 ﻿using BookShop.DataAccess.Data;
 using BookShop.DataAccess.Repository.IRepository;
+using BookShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,6 +23,7 @@ namespace BookShop.DataAccess.Repository
             OrderDetails = new OrderDetailsRepository(_db);
             OrderHeader = new OrderHeaderRepository(_db);
             ShoppingCart = new ShoppingCartRepository(_db);
+            AuthCounter = new AuthorizationCounterRepository(_db);
         }
 
         public IApplicationUserRepository ApplicationUser { get; private set; }
@@ -33,6 +35,7 @@ namespace BookShop.DataAccess.Repository
         public IOrderDetailsRepository OrderDetails { get; private set; }
         public IOrderHeaderRepository OrderHeader { get; private set; }
         public ISP_Call SP_Call { get; private set; }
+        public IAuthorizationCounterRepository AuthCounter { get; private set; }
 
         public void Dispose()
         {

@@ -502,10 +502,12 @@ C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcor
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
-C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.csproj.CoreCompileInputs.cache
-C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cs
-C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cache
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Home\Details.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Cart\Index.cshtml.g.cs
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\bin\Debug\netcoreapp3.1\Owin.dll
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.csproj.CoreCompileInputs.cache
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cs
+C:\ASP.NET practice\MVC5_Online_shop\BookShop\BookShop\BookShop\obj\Debug\netcoreapp3.1\BookShop.MvcApplicationPartsAssemblyInfo.cache

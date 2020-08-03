@@ -309,6 +309,10 @@
               "target": "Package",
               "version": "[3.1.6, )"
             },
+            "Microsoft.Owin": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"

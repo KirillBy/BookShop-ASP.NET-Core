@@ -16,6 +16,7 @@ using BookShop.DataAccess.Repository.IRepository;
 using BookShop.DataAccess.Repository;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BookShop.Utility;
+using BookShop.Middelware;
 
 namespace BookShop
 {
@@ -87,6 +88,8 @@ namespace BookShop
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseAuthorizationLogin();
 
             app.UseEndpoints(endpoints =>
             {
