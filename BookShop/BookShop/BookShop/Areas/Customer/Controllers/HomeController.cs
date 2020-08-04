@@ -44,7 +44,7 @@ namespace BookShop.Areas.Customer.Controllers
                 HttpContext.Session.SetInt32(SD.ssShoppingCart, count);
             }
 
-
+            
             return View(productList);
         }
 
