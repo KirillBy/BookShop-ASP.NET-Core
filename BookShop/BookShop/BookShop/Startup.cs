@@ -17,6 +17,7 @@ using BookShop.DataAccess.Repository;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BookShop.Utility;
 using BookShop.Middelware;
+using Stripe;
 
 namespace BookShop
 {
@@ -39,6 +40,7 @@ namespace BookShop
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddSingleton<IEmailSender, EmailSender>();
             services.Configure<EmailOptions>(Configuration);
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
@@ -84,6 +86,7 @@ namespace BookShop
             app.UseStaticFiles();
 
             app.UseRouting();
+            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
             app.UseSession();
 
             app.UseAuthentication();

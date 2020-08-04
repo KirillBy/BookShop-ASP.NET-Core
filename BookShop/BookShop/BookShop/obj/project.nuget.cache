@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3JlrvYAnLUXGNrOQdlOhCNmxCtCz522f+QHXuXyAVqjbzf4xL7ES2B06naxSLffqX84yuXY5XhYxlUNALXc3qA==",
+  "dgSpecHash": "i68xrUSNTpkcrcBAElDz5oJXocW+W8BJQvrtYt9LumdToZ2qzw8VL8glczksFMVGdC9gAoZZiRZgtxaHFqU8vA==",
   "success": true,
   "projectFilePath": "C:\\ASP.NET practice\\MVC5_Online_shop\\BookShop\\BookShop\\BookShop\\BookShop.csproj",
   "expectedPackageFiles": [
@@ -130,6 +130,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.2\\sqlitepclraw.provider.dynamic_cdecl.2.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\stripe.net\\37.28.0\\stripe.net.37.28.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
